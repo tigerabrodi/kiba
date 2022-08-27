@@ -1,0 +1,40 @@
+---
+import '@fontsource/rubik'
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <meta property="og:title" content="Kiba" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://user-images.githubusercontent.com/49603590/186825004-2fd05693-6245-4d6b-a9f9-4222717ef200.png"
+    />
+    <meta property="og:url" content="https://konoha-wiki.pages.dev/" />
+
+    <meta
+      property="og:description"
+      content="A public playlist with Naruto soundtracks."
+    />
+    <meta property="og:site_name" content="Kiba" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@TAbrodi" />
+    <meta
+      name="twitter:image"
+      content="https://user-images.githubusercontent.com/49603590/186825004-2fd05693-6245-4d6b-a9f9-4222717ef200.png"
+    />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/styles/global.css" />
+    <link rel="stylesheet" href="/styles/utils.css" />
+    <title>Kiba</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

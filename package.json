@@ -1,0 +1,24 @@
+{
+  "name": "Kiba",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "devDependencies": {
+    "@astrojs/solid-js": "^1.0.0",
+    "@types/uuid": "^8.3.4",
+    "astro": "^1.0.5",
+    "prettier": "^2.7.1",
+    "prettier-plugin-astro": "^0.5.0"
+  },
+  "dependencies": {
+    "@fontsource/rubik": "^4.5.11",
+    "solid-js": "^1.4.3",
+    "uuid": "^8.3.2"
+  }
+}

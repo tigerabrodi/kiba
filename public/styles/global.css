@@ -1,0 +1,41 @@
+:root {
+  --colors-brown: #090b0b;
+  --colors-light-brown: #131616;
+  --colors-red: #de4335;
+  --colors-pink: #ff7e42;
+  --colors-yellow: #f0c528;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: 'Rubik';
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100%;
+  background-color: var(--colors-brown);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 1px solid white;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px black;
+}
