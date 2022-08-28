@@ -1,5 +1,5 @@
 {
-  "name": "Kiba",
+  "name": "kiba",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -17,7 +17,7 @@
     "prettier-plugin-astro": "^0.5.0"
   },
   "dependencies": {
-    "@fontsource/rubik": "^4.5.11",
+    "@fontsource/montserrat": "^4.5.12",
     "solid-js": "^1.4.3",
     "uuid": "^8.3.2"
   }

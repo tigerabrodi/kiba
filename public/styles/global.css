@@ -1,9 +1,7 @@
 :root {
-  --colors-brown: #090b0b;
-  --colors-light-brown: #131616;
-  --colors-red: #de4335;
-  --colors-pink: #ff7e42;
-  --colors-yellow: #f0c528;
+  --colors-brown: #141414;
+  --colors-black: black;
+  --colors-white: white;
 }
 
 *,
@@ -12,7 +10,7 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-  font-family: 'Rubik';
+  font-family: 'Helvetica';
 }
 
 html {
