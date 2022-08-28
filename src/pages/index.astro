@@ -1,8 +1,9 @@
 ---
-import { Mobile } from '../components/Mobile'
 import MySiteLayout from '../layouts/MySiteLayout.astro'
+import { Trailer, Navigation } from '../components/home'
 ---
 
 <MySiteLayout>
-  <Mobile client:load />
+  <Navigation client:load />
+  <Trailer client:load />
 </MySiteLayout>
