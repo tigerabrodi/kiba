@@ -1,9 +1,28 @@
 ---
 import MySiteLayout from '../layouts/MySiteLayout.astro'
 import { Trailer, Navigation } from '../components/home'
+import {
+  MovieSchema,
+  MovieWithTrailerImageSchema,
+  ResponseSchema,
+} from '../lib/schemas'
+
+const ENDPOINT = import.meta.env.ENDPOINT
+const TOKEN = import.meta.env.TOKEN
+
+const response = await fetch(`${ENDPOINT}/items/movies?access_token=${TOKEN}`)
+const data = ResponseSchema.parse(await response.json()).data
+
+const firstMovie = MovieSchema.parse(data[0])
+
+const trailerMovie = MovieWithTrailerImageSchema.parse({
+  ...firstMovie,
+  trailerUrl: `${ENDPOINT}/assets/${firstMovie.trailer}?access_token=${TOKEN}`,
+  imageUrl: `${ENDPOINT}/assets/${firstMovie.image}?access_token=${TOKEN}`,
+})
 ---
 
 <MySiteLayout>
   <Navigation client:load />
-  <Trailer client:load />
+  <Trailer client:load movie={trailerMovie} />
 </MySiteLayout>
