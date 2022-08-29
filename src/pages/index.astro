@@ -7,6 +7,10 @@ import {
   ResponseSchema,
 } from '../lib/schemas'
 
+function getAssetURL(assetId: string) {
+  return `${ENDPOINT}/assets/${assetId}?access_token=${TOKEN}`
+}
+
 const ENDPOINT = import.meta.env.ENDPOINT
 const TOKEN = import.meta.env.TOKEN
 
@@ -17,8 +21,8 @@ const firstMovie = MovieSchema.parse(data[0])
 
 const trailerMovie = MovieWithTrailerImageSchema.parse({
   ...firstMovie,
-  trailerUrl: `${ENDPOINT}/assets/${firstMovie.trailer}?access_token=${TOKEN}`,
-  imageUrl: `${ENDPOINT}/assets/${firstMovie.image}?access_token=${TOKEN}`,
+  trailerUrl: getAssetURL(firstMovie.trailer),
+  imageUrl: getAssetURL(firstMovie.image),
 })
 ---
 
