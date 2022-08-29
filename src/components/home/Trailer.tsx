@@ -33,6 +33,14 @@ export function Trailer(props: TrailerProps) {
     }
   }
 
+  function onReplay() {
+    if (trailerVideoElement) {
+      setShouldShowImage(false)
+      setVideoVolume(1)
+      trailerVideoElement.currentTime = 0
+    }
+  }
+
   return (
     <div class="trailer__wrapper">
       <Show
@@ -65,7 +73,11 @@ export function Trailer(props: TrailerProps) {
 
       <div class="trailer__tag">
         <Show when={shouldShowImage()}>
-          <button aria-label="Replay trailer" class="trailer__tag-button">
+          <button
+            aria-label="Replay trailer"
+            class="trailer__tag-button"
+            onClick={onReplay}
+          >
             <Replay />
           </button>
         </Show>
