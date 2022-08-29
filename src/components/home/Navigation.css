@@ -1,0 +1,14 @@
+.navigation__wrapper {
+  position: absolute;
+  top: 55px;
+  left: 70px;
+  z-index: 10;
+}
+
+.navigation__link {
+  text-decoration: none;
+}
+
+.navigation__art {
+  width: 220px;
+}

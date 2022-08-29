@@ -19,6 +19,7 @@
   "dependencies": {
     "@fontsource/montserrat": "^4.5.12",
     "solid-js": "^1.4.3",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "zod": "^3.18.0"
   }
 }

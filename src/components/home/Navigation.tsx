@@ -1,3 +1,12 @@
+import { NarutoMainArt } from '../../arts/NarutoMainArt'
+import './Navigation.css'
+
 export function Navigation() {
-  return <div>Hello world</div>
+  return (
+    <nav class="navigation__wrapper">
+      <a href="/" class="navigation__link">
+        <NarutoMainArt class="navigation__art" />
+      </a>
+    </nav>
+  )
 }
