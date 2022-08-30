@@ -58,7 +58,7 @@
 }
 
 .trailer__info-link:hover {
-  background-color: #c7c7c7;
+  background-color: var(--colors-grey);
 }
 
 .trailer__info-link svg {
@@ -119,7 +119,7 @@
   align-items: center;
 
   height: 60px;
-  border-left: 2px solid #c7c7c7;
+  border-left: 2px solid var(--colors-grey);
 }
 
 .trailer__tag-age-text {
