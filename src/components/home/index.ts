@@ -1,2 +1,2 @@
 export * from './Trailer'
-export * from './Navigation'
+export * from './Movies'

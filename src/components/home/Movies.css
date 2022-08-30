@@ -1,0 +1,36 @@
+.movies__section {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 50;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.movies__heading {
+  font-weight: 700;
+  color: var(--colors-grey);
+  font-size: calc(1rem * 35 / 16);
+}
+
+.movies__wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+.movies__movie-link {
+  width: 395px;
+  height: 220px;
+}
+
+.movies__movie-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}
