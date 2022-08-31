@@ -1,0 +1,110 @@
+.movies__movie-graphic {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}
+
+.movies__movie-graphic img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.movies__movie-graphic video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: none;
+  visibility: hidden;
+}
+
+.movies__movie-link-wrapper:hover .movies__movie-graphic video {
+  display: block;
+  visibility: visible;
+  transition: all 200ms 250ms;
+}
+
+.movies__movie-link-wrapper:hover .movies__movie-graphic img {
+  display: none;
+}
+
+.movies__movie-link-wrapper {
+  position: relative;
+  width: 395px;
+  height: 220px;
+}
+
+.movies__movie-link {
+  color: var(--colors-grey);
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.movies__movie-link-wrapper:hover {
+  z-index: 10;
+  transform: scale(1.3);
+  transition: 200ms ease-out 200ms;
+}
+
+.movies__movie-link-wrapper:hover .movies__movie-link {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: 200ms ease-out 200ms;
+  box-shadow: 0 5px 20px black;
+}
+
+.movies__movie-link-wrapper:hover .movies__movie-graphic {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.movies__movie-info {
+  visibility: hidden;
+  width: 100%;
+  height: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--colors-brown);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  box-shadow: 0 1px 10px #000000a3;
+  padding: 7px 10px 15px 10px;
+}
+
+.movies__movie-link-wrapper:hover .movies__movie-info {
+  visibility: visible;
+  height: auto;
+  transition: all 200ms 200ms;
+}
+
+.movies__movie-info-heading {
+  font-size: calc(1rem * 16 / 16);
+  margin-top: 5px;
+  font-weight: 700;
+}
+
+.movies__movie-info-description {
+  font-size: calc(1rem * 14 / 16);
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+.movies__movie-info-length {
+  font-size: calc(1rem * 12 / 16);
+  color: var(--colors-brown);
+  background-color: var(--colors-grey);
+  padding: 2px 4px;
+  width: max-content;
+  text-shadow: none;
+  margin-top: 10px;
+  border-radius: 2px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.274);
+}
