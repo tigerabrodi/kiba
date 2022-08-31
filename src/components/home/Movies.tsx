@@ -13,13 +13,24 @@ export function Movies(props: MoviesProps) {
       <div class="movies__wrapper">
         <For each={props.movies}>
           {(movie) => (
-            <a class="movies__movie-link" href={`/${movie.id}`}>
-              <img
-                src={movie.imageUrl}
-                alt={movie.title}
-                class="movies__movie-image"
-              />
-            </a>
+            <div class="movies__movie-link-wrapper">
+              <a
+                class="movies__movie-link"
+                href={`/${movie.id}`}
+                aria-label={movie.title}
+              >
+                <img
+                  src={movie.imageUrl}
+                  alt={movie.title}
+                  class="movies__movie-image"
+                />
+
+                <div class="movies__movie-info">
+                  <h3 class="movies__movie-info-heading">{movie.title}</h3>
+                  <span class="movies__movie-info-length">{movie.length}</span>
+                </div>
+              </a>
+            </div>
           )}
         </For>
       </div>
