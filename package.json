@@ -17,6 +17,7 @@
     "prettier-plugin-astro": "^0.5.0"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^1.0.1",
     "@fontsource/montserrat": "^4.5.12",
     "solid-js": "^1.4.3",
     "uuid": "^8.3.2",
