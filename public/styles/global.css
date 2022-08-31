@@ -20,7 +20,9 @@ html {
 
 body {
   box-sizing: border-box;
-  height: 100%;
+  /* Here we add another 100px to the full height since we only have 5 movies on this site, and hovering over them, they will have to scale and it is a bit tricky getting space beneath them, causing them to sit on the edge of the bottom. */
+  height: calc(100% + 100px);
+  overflow-y: scroll;
   background-color: var(--colors-brown);
   display: flex;
   flex-direction: column;
