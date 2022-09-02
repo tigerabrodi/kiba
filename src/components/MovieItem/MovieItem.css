@@ -108,3 +108,32 @@
   border-radius: 2px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.274);
 }
+
+.movies__movie-graphic-placeholder {
+  background-color: var(--colors-brown);
+  box-shadow: 0 1px 2px black;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes loading {
+  from {
+    left: -30%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+.movies__movie-graphic-placeholder div {
+  position: absolute;
+  top: 0;
+  left: -30%;
+  width: 30%;
+  height: 100%;
+  background: radial-gradient(#ffffff1f, #14141485);
+  animation: loading 400ms infinite ease-out;
+}
