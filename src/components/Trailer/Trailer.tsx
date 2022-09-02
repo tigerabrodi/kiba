@@ -52,6 +52,8 @@ export function Trailer(props: TrailerProps) {
             src={props.movie.trailerUrl}
             class="trailer__graphic"
             onEnded={handleTrailerEnd}
+            preload="metadata"
+            poster={props.movie.imageUrl}
           />
         }
       >
