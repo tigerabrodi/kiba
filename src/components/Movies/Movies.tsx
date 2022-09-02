@@ -1,7 +1,7 @@
 import { For } from 'solid-js'
 import './Movies.css'
 import type { MovieWithTrailerImage } from '../../lib/schemas'
-import { MovieItem } from './MovieItem'
+import { MovieItem } from '../MovieItem/MovieItem'
 
 type MoviesProps = {
   movies: Array<MovieWithTrailerImage>
