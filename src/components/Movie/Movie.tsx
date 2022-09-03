@@ -92,6 +92,7 @@ export function Movie(props: MovieProps) {
         class="movie__video"
         preload="metadata"
         poster={props.movie.imageUrl}
+        onClick={togglePauseState}
       />
       <div class="movie__player">
         <div class="movie__slider-wrapper">
