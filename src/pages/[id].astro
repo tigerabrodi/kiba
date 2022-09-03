@@ -1,0 +1,32 @@
+---
+import MySiteLayout from '../layouts/MySiteLayout.astro'
+import '../styles/movie.css'
+import { Movie } from '../components'
+import { z } from 'zod'
+import { MovieWithMovieImage, SingleResponseSchema } from '../lib/schemas'
+
+function getAssetURL(assetId: string) {
+  return `${ENDPOINT}/assets/${assetId}?access_token=${TOKEN}`
+}
+
+const ENDPOINT = import.meta.env.ENDPOINT
+const TOKEN = import.meta.env.TOKEN
+
+const { id } = Astro.params
+
+const response = await fetch(
+  `${ENDPOINT}/items/movies/${z.string().parse(id)}?access_token=${TOKEN}`
+)
+
+const data = SingleResponseSchema.parse(await response.json()).data
+
+const movie: MovieWithMovieImage = {
+  ...data,
+  imageUrl: getAssetURL(data.image),
+  movieUrl: getAssetURL(data.movie),
+}
+---
+
+<MySiteLayout>
+  <Movie client:load movie={movie} />
+</MySiteLayout>

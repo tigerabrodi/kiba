@@ -18,6 +18,12 @@ export const MovieWithImageSchema = MovieSchema.extend({
 
 export type MovieWithImage = z.infer<typeof MovieWithImageSchema>
 
+export const MovieWithMovieImageSchema = MovieWithImageSchema.extend({
+  movieUrl: z.string(),
+})
+
+export type MovieWithMovieImage = z.infer<typeof MovieWithMovieImageSchema>
+
 export const MovieWithTrailerImageSchema = MovieWithImageSchema.extend({
   trailerUrl: z.string(),
 })
@@ -33,3 +39,9 @@ export const ResponseSchema = z.object({
 })
 
 export type Response = z.infer<typeof ResponseSchema>
+
+export const SingleResponseSchema = z.object({
+  data: MovieSchema,
+})
+
+export type SingleResponse = z.infer<typeof SingleResponseSchema>
