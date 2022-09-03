@@ -48,7 +48,9 @@ export function Movie(props: MovieProps) {
 
   function handleSkipBySeconds(secondsToBeSkipped: number) {
     if (videoElement) {
-      videoElement.currentTime += secondsToBeSkipped
+      const newTime = videoElement.currentTime + secondsToBeSkipped
+      // Check to not go negative
+      videoElement.currentTime = newTime < 0 ? 0 : newTime
     }
   }
 
