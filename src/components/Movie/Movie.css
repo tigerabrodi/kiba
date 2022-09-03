@@ -167,3 +167,14 @@
   bottom: 4px;
   z-index: 200;
 }
+
+.movie__player-button-fullscreen {
+  position: absolute;
+  right: 35px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.movie__player-button-fullscreen:hover {
+  transform: translateY(-50%) scale(1.1);
+}

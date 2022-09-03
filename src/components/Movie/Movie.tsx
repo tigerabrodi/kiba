@@ -2,6 +2,8 @@ import { createSignal, Show } from 'solid-js'
 import { BackButton } from '../../icons/BackButton'
 import { Backward } from '../../icons/Backward'
 import { Forward } from '../../icons/Forward'
+import { FullScreen } from '../../icons/FullScreen'
+import { MinimizeScreen } from '../../icons/MinimizeScreen'
 import { Play } from '../../icons/Play'
 import { Stop } from '../../icons/Stop'
 import { VolumeEmpty } from '../../icons/VolumeEmpty'
@@ -16,6 +18,7 @@ type MovieProps = {
 export function Movie(props: MovieProps) {
   const [isMoviePlaying, setIsMoviePlaying] = createSignal(true)
   const [isMovieMuted, setIsMovieMuted] = createSignal(false)
+  const [isFullscreen, setIsFullscreen] = createSignal(false)
   const [currentProgress, setCurrentProgress] = createSignal(0)
   let videoElement: HTMLVideoElement | undefined = undefined
 
@@ -65,6 +68,16 @@ export function Movie(props: MovieProps) {
     }
   }
 
+  function toggleFullscreen() {
+    if (isFullscreen()) {
+      document.exitFullscreen()
+      setIsFullscreen(false)
+    } else {
+      document.documentElement.requestFullscreen().catch(console.log)
+      setIsFullscreen(true)
+    }
+  }
+
   return (
     <main class="movie__container">
       <a class="movie__back-link" href="/">
@@ -76,7 +89,6 @@ export function Movie(props: MovieProps) {
         autoplay
         class="movie__video"
         preload="metadata"
-        muted
         poster={props.movie.imageUrl}
       />
       <div class="movie__player">
@@ -137,6 +149,15 @@ export function Movie(props: MovieProps) {
             </Show>
           </button>
         </div>
+        <button
+          class="movie__player-button movie__player-button-fullscreen"
+          onClick={toggleFullscreen}
+          aria-label={isFullscreen() ? 'Minimize screen' : 'Fullscreen'}
+        >
+          <Show when={isFullscreen()} fallback={<FullScreen />}>
+            <MinimizeScreen />
+          </Show>
+        </button>
       </div>
     </main>
   )
